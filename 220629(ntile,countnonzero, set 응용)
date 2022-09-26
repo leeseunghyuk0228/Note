@@ -1,0 +1,40 @@
+---------------------------------------------------------------------------
+1. set 객체 계산
+
+set(range(1,11)) - set(range(1,5)) 
+
+--> { 5, 6, 7, 8, 9, 10}
+--> 소수 만들기, 에라토스테네스 체 등
+
+---------------------------------------------------------------------------
+
+2. numpy ntile
+
+잊고 있었음
+
+np.ntile(list, int) -> list*n
+
+
+---------------------------------------------------------------------------
+
+3. np.count_nonzero
+
+np.count_nonzero( a, axis, keepdims ), return -> int(count not 0 in a)
+
+Parameters
+    ----------
+    a : array_like
+        The array for which to count non-zeros.
+    axis : int or tuple, optional
+        Axis or tuple of axes along which to count non-zeros.
+        Default is None, meaning that non-zeros will be counted
+        along a flattened version of ``a``.
+    
+        .. versionadded:: 1.12.0
+    
+    keepdims : bool, optional
+        If this is set to True, the axes that are counted are left
+        in the result as dimensions with size one. With this option,
+        the result will broadcast correctly against the input array.
+    
+        .. versionadded:: 1.19.0
