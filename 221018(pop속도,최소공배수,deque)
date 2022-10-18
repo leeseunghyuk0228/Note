@@ -1,0 +1,53 @@
+
+========================================================================================================================================
+
+1. pop() 시간복잡도
+
+pop() -> O()
+
+pop(n) -> O(n)
+
+index n원소를 빼면서 나머지도 다 확인? 정렬? 재배치? 하기 때문인 듯
+
+del, remove 등 함수도 시간이 오래걸렸음
+
+index 계산을 통해 처리하는 것으로 문제 통과함(구명보트)
+
+========================================================================================================================================
+
+
+2. 최소공배수
+
+n[1] = n[1] * n[0] / gcd(n[1], n[0]) 
+     = 두 수의 곱 / 두 수의 최대공약수
+
+gcd      -> from fractions import gcd
+math.gcd -> import math 
+
+
+========================================================================================================================================
+
+
+3. deque
+
+deque도 속도가 빨랐다
+
+deque.popleft()
+deque.pop()
+deque.appendleft() 등
+
+### fromm collections import deque ###
+
+def solution(people, limit):
+    result = 0
+    deque_people = deque(sorted(people))
+
+    while deque_people:
+  ###   left = deque_people.popleft() ###
+        if not deque_people: --> 가벼운놈 뺐는데, deque가 []이면
+            return result + 1
+  ###   right = deque_people.pop()    ###
+        if left + right > limit:
+  ###       deque_people.appendleft(left) ###
+        result += 1
+    return result
